@@ -1,0 +1,20 @@
+name: 'Generate module'
+description: 'Generate a Zikula module from a ModuleStudio application model'
+inputs:
+  model-name:
+    description: 'Model name'
+    required: true
+    default: 'AcmeNews.mostapp'
+  module-name:
+    description: 'Module name'
+    required: true
+    default: 'Acme/NewsModule'
+outputs:
+  result:
+    description: 'Generated files'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.model-name }}
+    - ${{ inputs.module-name }}
