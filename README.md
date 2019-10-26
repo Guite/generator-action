@@ -8,7 +8,7 @@ The standalone generator is always providing the latest Git revision of [the gen
 ### `model-name`
 **Required** Full name of your model file. Default `"AcmeNews.mostapp"`.
 
-### `model-name`
+### `module-name`
 **Required** Name of your module including the vendor and the `Module` suffix. Default `"Acme/NewsModule"`.
 
 ## Outputs
