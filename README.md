@@ -19,7 +19,7 @@ Generated files.
 ## Example usage
 
 ```
-uses: guite/generator-action@v1
+uses: guite/generator-action@master
 with:
   model-name: 'MultiHook.mostapp'
   module-name: 'Zikula/MultiHookModule'
