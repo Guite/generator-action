@@ -25,4 +25,4 @@ with:
   module-name: 'Zikula/MultiHookModule'
 ```
 
-A dummy project using this GitHub Action can be found [here](https://github.com/Guite/TestGenGHA).
+A dummy project using this GitHub Action can be found [here](https://github.com/Guite/test-actions).
