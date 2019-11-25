@@ -18,3 +18,6 @@ runs:
   args:
     - ${{ inputs.model-name }}
     - ${{ inputs.module-name }}
+branding:
+  icon: 'check'
+  color: 'orange'
