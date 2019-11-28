@@ -35,6 +35,12 @@ if [ "$VERBOSE" = true ]; then
 else
     ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER} >/dev/null
 fi
+echo "Test 1:"
+ls -l ${OUTPUT_FOLDER}
+echo "Test 2:"
+ls -l ${WORKSPACE_ROOT}${OUTPUT_FOLDER}
+echo "Test 3:"
+ls -l ${OUTPUT_PATH}
 
 if [ "$VERBOSE" = true ]; then
     echo "Remove unrequired files (marked with generated suffix)"
