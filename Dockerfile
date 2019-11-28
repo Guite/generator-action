@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine
+FROM openjdk:11
 
 LABEL "com.github.actions.name"="Guite-Generator-Action"
 LABEL "com.github.actions.description"="Regenerate Zikula modules from ModuleStudio models"
