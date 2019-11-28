@@ -5,10 +5,10 @@ MODULE_NAME=$INPUT_MODULE_NAME
 BASE_DIR=$INPUT_BASE_DIR
 VERBOSE=${INPUT_VERBOSE:false}
 
-echo "Model: ${MODEL_NAME}"
-echo "Module: ${MODULE_NAME}"
-echo "Base dir: ${BASE_DIR}"
-echo "Verbose: ${VERBOSE}"
+# echo "Model: ${MODEL_NAME}"
+# echo "Module: ${MODULE_NAME}"
+# echo "Base dir: ${BASE_DIR}"
+# echo "Verbose: ${VERBOSE}"
 
 WGET="wget -q"
 if [ "$VERBOSE" = true ]; then
@@ -24,13 +24,18 @@ mkdir -p "work" && cd "work"
 if [ "$VERBOSE" = true ]; then
     echo "Download generator"
 fi
-$WGET "https://updates.modulestudio.de/standalone/ModuleStudio-generator.jar"
+${WGET} "https://updates.modulestudio.de/standalone/ModuleStudio-generator.jar"
 
 if [ "$VERBOSE" = true ]; then
     echo "Fetch model and regenerate it"
 fi
 cp "../${MODULE_PATH}/Resources/docs/model/${MODEL_NAME}" "./${MODEL_NAME}"
-java -jar ModuleStudio-generator.jar ${MODEL_NAME} "output"
+GENERATOR="java -jar ModuleStudio-generator.jar"
+if [ "$VERBOSE" = true ]; then
+    ${GENERATOR} ${MODEL_NAME} "output"
+else
+    ${GENERATOR} ${MODEL_NAME} "output" >/dev/null
+fi
 
 if [ "$VERBOSE" = true ]; then
     echo "Remove unrequired files (marked with generated suffix)"
@@ -43,3 +48,4 @@ if [ "$VERBOSE" = true ]; then
 fi
 cp -R "${OUTPUT_PATH}/*" "../${MODULE_PATH}"
 cd ..
+rm -rf "work"
