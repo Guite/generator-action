@@ -10,8 +10,10 @@ else
 fi
 
 if [ -z "$4" ]; then
+    echo "VERBOSE TRUE"
     VERBOSE=true
 else
+    echo "VERBOSE FALSE"
     VERBOSE=false
 fi
 
