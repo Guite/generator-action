@@ -1,4 +1,4 @@
-#FROM openjdk:11
+#FROM openjdk:12  openjdk:14-alpine
 FROM alpine:3.10
 
 LABEL "com.github.actions.name"="Guite-Generator-Action"

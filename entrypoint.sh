@@ -14,6 +14,8 @@ WGET="wget -q"
 if [ "$VERBOSE" = true ]; then
     WGET="wget"
 fi
+GENERATOR_FILE="https://updates.modulestudio.de/standalone/ModuleStudio-generator.jar"
+
 MODULE_PATH="${BASE_DIR}modules/${MODULE_NAME}"
 OUTPUT_PATH="output/${MODULE_NAME}"
 
@@ -24,7 +26,7 @@ mkdir -p "work" && cd "work"
 if [ "$VERBOSE" = true ]; then
     echo "Download generator"
 fi
-${WGET} "https://updates.modulestudio.de/standalone/ModuleStudio-generator.jar"
+${WGET} ${GENERATOR_FILE}
 
 if [ "$VERBOSE" = true ]; then
     echo "Fetch model and regenerate it"
@@ -45,6 +47,7 @@ find "${OUTPUT_PATH}" -type f -name '*.generated.*' -delete
 
 if [ "$VERBOSE" = true ]; then
     echo "Copy generated module artifacts into the checkout"
+    echo "Call: cp -R ${OUTPUT_PATH}/* ../${MODULE_PATH}"
 fi
 cp -R "${OUTPUT_PATH}/*" "../${MODULE_PATH}"
 cd ..
