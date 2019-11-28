@@ -1,5 +1,6 @@
 #!/bin/bash
 
+WORKSPACE_ROOT="${INPUT_GITHUB_WORKSPACE}/"
 MODEL_NAME=$INPUT_MODEL_NAME
 MODULE_NAME=$INPUT_MODULE_NAME
 BASE_DIR=$INPUT_BASE_DIR
@@ -10,33 +11,29 @@ VERBOSE=${INPUT_VERBOSE:false}
 # echo "Base dir: ${BASE_DIR}"
 # echo "Verbose: ${VERBOSE}"
 
-WGET="wget -q"
-if [ "$VERBOSE" = true ]; then
-    WGET="wget"
-fi
-GENERATOR_FILE="https://updates.modulestudio.de/standalone/ModuleStudio-generator.jar"
-
 MODULE_PATH="${BASE_DIR}modules/${MODULE_NAME}"
-OUTPUT_PATH="output/${MODULE_NAME}"
+OUTPUT_FOLDER="output"
+OUTPUT_PATH="${WORKSPACE_ROOT}${OUTPUT_FOLDER}/${MODULE_NAME}"
+GENERATOR_FILE="ModuleStudio-generator.jar"
+GENERATOR_URL="https://updates.modulestudio.de/standalone/${GENERATOR_FILE}"
 
-if [ "$VERBOSE" = true ]; then
-    echo "Create working directory"
-fi
 mkdir -p "work" && cd "work"
 if [ "$VERBOSE" = true ]; then
     echo "Download generator"
+    wget ${GENERATOR_URL}
+else
+    wget -q ${GENERATOR_URL}
 fi
-${WGET} ${GENERATOR_FILE}
 
 if [ "$VERBOSE" = true ]; then
     echo "Fetch model and regenerate it"
 fi
-cp "../${MODULE_PATH}/Resources/docs/model/${MODEL_NAME}" "./${MODEL_NAME}"
-GENERATOR="java -jar ModuleStudio-generator.jar"
+cp "${WORKSPACE_ROOT}${MODULE_PATH}/Resources/docs/model/${MODEL_NAME}" "./${MODEL_NAME}"
+GENERATOR="java -jar ${GENERATOR_FILE}"
 if [ "$VERBOSE" = true ]; then
-    ${GENERATOR} ${MODEL_NAME} "output"
+    ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER}
 else
-    ${GENERATOR} ${MODEL_NAME} "output" >/dev/null
+    ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER} >/dev/null
 fi
 
 if [ "$VERBOSE" = true ]; then
@@ -47,8 +44,8 @@ find "${OUTPUT_PATH}" -type f -name '*.generated.*' -delete
 
 if [ "$VERBOSE" = true ]; then
     echo "Copy generated module artifacts into the checkout"
-    echo "Call: cp -R ${OUTPUT_PATH}/* ../${MODULE_PATH}"
 fi
-cp -R "${OUTPUT_PATH}/*" "../${MODULE_PATH}"
+ls -l "${OUTPUT_PATH}"
+cp -R "${OUTPUT_PATH}/*" "${WORKSPACE_ROOT}${MODULE_PATH}"
 cd ..
 rm -rf "work"
