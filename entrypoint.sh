@@ -5,6 +5,11 @@ MODULE_NAME=$INPUT_MODULE_NAME
 BASE_DIR=$INPUT_BASE_DIR
 VERBOSE=${INPUT_VERBOSE:false}
 
+echo "Model: ${MODEL_NAME}"
+echo "Module: ${MODULE_NAME}"
+echo "Base dir: ${BASE_DIR}"
+echo "Verbose: ${VERBOSE}"
+
 WGET="wget -q"
 if [ "$VERBOSE" = true ]; then
     WGET="wget"

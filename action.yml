@@ -21,6 +21,11 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.model_name }}
+    - ${{ inputs.module_name }}
+    - ${{ inputs.base_dir }}
+    - ${{ inputs.verbose }}
 branding:
   icon: 'check'
   color: 'orange'
