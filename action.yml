@@ -9,6 +9,10 @@ inputs:
     description: 'Module name'
     required: true
     default: 'Acme/NewsModule'
+  base-dir:
+    description: 'Path to the directory containing the modules folder (including trailing slash)'
+    required: false
+    default: ""
   verbose:
     description: 'Enable verbose output'
     required: false
