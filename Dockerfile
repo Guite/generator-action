@@ -10,7 +10,7 @@ LABEL "repository"="https://github.com/Guite/generator-action"
 LABEL "homepage"="https://github.com/actions"
 LABEL "maintainer"="Axel Guckelsberger <info@guite.de>"
 
-RUN apk update && apk upgrade && apk add openjdk8-jre
+RUN apk update && apk upgrade && apk add openjdk11-jre
 
 COPY entrypoint.sh /entrypoint.sh
 
