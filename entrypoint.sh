@@ -46,7 +46,6 @@ find "${OUTPUT_PATH}" -type f -name '*.generated.*' -delete
 if [ "$VERBOSE" = true ]; then
     echo "Copy generated module artifacts into the checkout"
 fi
-ls -l ${OUTPUT_PATH}
-cp -R "${OUTPUT_PATH}/*" "${MODULE_PATH}"
+cp -R "${OUTPUT_PATH}/"* "${MODULE_PATH}"
 cd ${WORKSPACE_ROOT}
 rm -rf ${WORK_FOLDER}
