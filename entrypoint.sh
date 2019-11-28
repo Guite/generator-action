@@ -48,5 +48,5 @@ if [ "$VERBOSE" = true ]; then
 fi
 ls -l ${OUTPUT_PATH}
 cp -R "${OUTPUT_PATH}/*" "${MODULE_PATH}"
-cd ..
+cd ${WORKSPACE_ROOT}
 rm -rf ${WORK_FOLDER}
