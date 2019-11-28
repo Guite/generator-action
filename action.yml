@@ -9,6 +9,10 @@ inputs:
     description: 'Module name'
     required: true
     default: 'Acme/NewsModule'
+  verbose:
+    description: 'Enable verbose output'
+    required: false
+    default: false
 outputs:
   result:
     description: 'Generated files'

@@ -1,10 +1,7 @@
-FROM alpine
-# TODO look for better fitting images
-# e.g. openjdk alpine
-# see https://github.com/docker-library/docs/tree/master/openjdk
+FROM openjdk:11-alpine
 
 LABEL "com.github.actions.name"="Guite-Generator-Action"
-LABEL "com.github.actions.description"="regenerate Zikula modules from ModuleStudio models"
+LABEL "com.github.actions.description"="Regenerate Zikula modules from ModuleStudio models"
 LABEL "com.github.actions.icon"="orange"
 LABEL "com.github.actions.color"="blue"
 

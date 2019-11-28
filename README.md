@@ -11,6 +11,9 @@ The standalone generator is always providing the latest Git revision of [the gen
 ### `module-name`
 **Required** Name of your module including the vendor and the `Module` suffix. Default `"Acme/NewsModule"`.
 
+### `verbose`
+**Optional** Whether to enable verbose output (set to `true`). Default `false`.
+
 ## Outputs
 
 ### `results`
