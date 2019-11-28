@@ -9,12 +9,12 @@ else
     BASE_DIR="$3"
 fi
 
-if [ -z "$4" ]; then
-    echo "VERBOSE TRUE"
-    VERBOSE=true
-else
+if [ -z ${4+x} ]; then
     echo "VERBOSE FALSE"
     VERBOSE=false
+else
+    echo "VERBOSE TRUE"
+    VERBOSE=true
 fi
 
 WGET="wget -q"
