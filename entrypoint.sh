@@ -2,8 +2,18 @@
 
 MODEL_NAME=$1
 MODULE_NAME=$2
-BASE_DIR=$3
-VERBOSE=$4
+
+if [ -z "$3" ]; then
+    BASE_DIR=""
+else
+    BASE_DIR="$3"
+fi
+
+if [ -z "$4" ]; then
+    VERBOSE=true
+else
+    VERBOSE=false
+fi
 
 WGET="wget -q"
 if [ $VERBOSE == true ]; then
