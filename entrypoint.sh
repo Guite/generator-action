@@ -11,13 +11,14 @@ VERBOSE=${INPUT_VERBOSE:false}
 # echo "Base dir: ${BASE_DIR}"
 # echo "Verbose: ${VERBOSE}"
 
-MODULE_PATH="${BASE_DIR}modules/${MODULE_NAME}"
+MODULE_PATH="${WORKSPACE_ROOT}${BASE_DIR}modules/${MODULE_NAME}"
+WORK_FOLDER="work"
 OUTPUT_FOLDER="output"
-OUTPUT_PATH="${WORKSPACE_ROOT}work/${OUTPUT_FOLDER}/${MODULE_NAME}"
+OUTPUT_PATH="${WORKSPACE_ROOT}${WORK_FOLDER}/${OUTPUT_FOLDER}/${MODULE_NAME}"
 GENERATOR_FILE="ModuleStudio-generator.jar"
 GENERATOR_URL="https://updates.modulestudio.de/standalone/${GENERATOR_FILE}"
 
-mkdir -p "work" && cd "work"
+mkdir -p ${WORK_FOLDER} && cd ${WORK_FOLDER}
 if [ "$VERBOSE" = true ]; then
     echo "Download generator"
     wget ${GENERATOR_URL}
@@ -28,15 +29,13 @@ fi
 if [ "$VERBOSE" = true ]; then
     echo "Fetch model and regenerate it"
 fi
-cp "${WORKSPACE_ROOT}${MODULE_PATH}/Resources/docs/model/${MODEL_NAME}" "./${MODEL_NAME}"
+cp "${MODULE_PATH}/Resources/docs/model/${MODEL_NAME}" "./${MODEL_NAME}"
 GENERATOR="java -jar ${GENERATOR_FILE}"
 if [ "$VERBOSE" = true ]; then
     ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER}
 else
     ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER} >/dev/null
 fi
-echo "Test:"
-ls -l ${OUTPUT_PATH}
 
 if [ "$VERBOSE" = true ]; then
     echo "Remove unrequired files (marked with generated suffix)"
@@ -47,7 +46,7 @@ find "${OUTPUT_PATH}" -type f -name '*.generated.*' -delete
 if [ "$VERBOSE" = true ]; then
     echo "Copy generated module artifacts into the checkout"
 fi
-ls -l "${OUTPUT_PATH}"
-cp -R "${OUTPUT_PATH}/*" "${WORKSPACE_ROOT}${MODULE_PATH}"
+ls -l ${OUTPUT_PATH}
+cp -R "${OUTPUT_PATH}/*" "${MODULE_PATH}"
 cd ..
-rm -rf "work"
+rm -rf ${WORK_FOLDER}
