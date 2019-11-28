@@ -15,7 +15,7 @@ The standalone generator is always providing the latest Git revision of [the gen
 **Optional** Path to the directory containing the `modules/` folder (including trailing slash). Default `""`.
 
 ### `verbose`
-**Optional** Whether to enable verbose output (set to `true`). Default `false`.
+**Optional** Whether to enable verbose output (set to `"true"`).
 
 ## Outputs
 
@@ -30,7 +30,7 @@ with:
   model-name: 'MultiHook.mostapp'
   module-name: 'Zikula/MultiHookModule'
   base-dir: 'src/'
-  verbose: true
+  verbose: 'true'
 ```
 
 A dummy project using this GitHub Action can be found [here](https://github.com/Guite/test-actions).

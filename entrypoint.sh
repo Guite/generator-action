@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 MODEL_NAME=$1
 MODULE_NAME=$2
@@ -9,7 +9,7 @@ else
     BASE_DIR="$3"
 fi
 
-if [ -z ${4+x} ]; then
+if [ -z "$4" ]; then
     echo "VERBOSE FALSE"
     VERBOSE=false
 else
