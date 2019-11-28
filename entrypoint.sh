@@ -13,7 +13,7 @@ VERBOSE=${INPUT_VERBOSE:false}
 
 MODULE_PATH="${BASE_DIR}modules/${MODULE_NAME}"
 OUTPUT_FOLDER="output"
-OUTPUT_PATH="${WORKSPACE_ROOT}${OUTPUT_FOLDER}/${MODULE_NAME}"
+OUTPUT_PATH="${WORKSPACE_ROOT}work/${OUTPUT_FOLDER}/${MODULE_NAME}"
 GENERATOR_FILE="ModuleStudio-generator.jar"
 GENERATOR_URL="https://updates.modulestudio.de/standalone/${GENERATOR_FILE}"
 
@@ -35,11 +35,7 @@ if [ "$VERBOSE" = true ]; then
 else
     ${GENERATOR} ${MODEL_NAME} ${OUTPUT_FOLDER} >/dev/null
 fi
-echo "Test 1:"
-ls -l ${OUTPUT_FOLDER}
-echo "Test 2:"
-ls -l ${WORKSPACE_ROOT}${OUTPUT_FOLDER}
-echo "Test 3:"
+echo "Test:"
 ls -l ${OUTPUT_PATH}
 
 if [ "$VERBOSE" = true ]; then
