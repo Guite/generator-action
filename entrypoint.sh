@@ -40,7 +40,7 @@ fi
 if [ "$VERBOSE" = true ]; then
     echo "Remove unrequired files (marked with generated suffix)"
 fi
-#rm "${OUTPUT_PATH}/Resources/public/images/*.png"
+rm "${OUTPUT_PATH}/Resources/public/images/*.png"
 find "${OUTPUT_PATH}" -type f -name '*.generated.*' -delete
 
 if [ "$VERBOSE" = true ]; then
