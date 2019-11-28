@@ -5,17 +5,17 @@ The standalone generator is always providing the latest Git revision of [the gen
 
 ## Inputs
 
-### `model-name`
+### `model_name`
 **Required** Full name of your model file. Default `"AcmeNews.mostapp"`.
 
-### `module-name`
+### `module_name`
 **Required** Name of your module including the vendor and the `Module` suffix. Default `"Acme/NewsModule"`.
 
-### `base-dir`
+### `base_dir`
 **Optional** Path to the directory containing the `modules/` folder (including trailing slash). Default `""`.
 
 ### `verbose`
-**Optional** Whether to enable verbose output (set to `"true"`).
+**Optional** Whether to enable verbose output (set to `true`). Default `false`.
 
 ## Outputs
 
@@ -27,10 +27,10 @@ Generated files.
 ```
 uses: guite/generator-action@master
 with:
-  model-name: 'MultiHook.mostapp'
-  module-name: 'Zikula/MultiHookModule'
-  base-dir: 'src/'
-  verbose: 'true'
+  model_name: 'MultiHook.mostapp'
+  module_name: 'Zikula/MultiHookModule'
+  base_dir: 'src/'
+  verbose: true
 ```
 
 A dummy project using this GitHub Action can be found [here](https://github.com/Guite/test-actions).
