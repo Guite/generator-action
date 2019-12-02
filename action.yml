@@ -1,26 +1,26 @@
-name: 'Generate module'
-description: 'Generate a Zikula module from a ModuleStudio application model'
+name: Generate module
+description: Generate a Zikula module from a ModuleStudio application model
 inputs:
   model_name:
-    description: 'Model name'
+    description: Model name
     required: true
     default: 'AcmeNews.mostapp'
   module_name:
-    description: 'Module name'
+    description: Module name
     required: true
     default: 'Acme/NewsModule'
   base_dir:
-    description: 'Path to the directory containing the modules folder (including trailing slash)'
+    description: Path to the directory containing the modules folder (including trailing slash)
     required: false
   verbose:
-    description: 'Enable verbose output'
+    description: Enable verbose output
     required: false
 outputs:
   result:
-    description: 'Generated files'
+    description: Generated files
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
 branding:
-  icon: 'check'
-  color: 'orange'
+  icon: check
+  color: orange
