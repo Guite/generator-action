@@ -16,7 +16,7 @@ WORK_FOLDER="work"
 OUTPUT_FOLDER="output"
 OUTPUT_PATH="${WORKSPACE_ROOT}${WORK_FOLDER}/${OUTPUT_FOLDER}/${MODULE_NAME}"
 GENERATOR_FILE="ModuleStudio-generator.jar"
-GENERATOR_URL="https://updates.modulestudio.de/standalone/${GENERATOR_FILE}"
+GENERATOR_URL="https://github.com/Guite/MostGenerator/releases/download/standalone/${GENERATOR_FILE}"
 
 mkdir -p ${WORK_FOLDER} && cd ${WORK_FOLDER}
 if [ "$VERBOSE" = true ]; then
