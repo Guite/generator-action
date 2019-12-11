@@ -1,4 +1,4 @@
-name: Generate module
+name: Generate Zikula module
 description: Generate a Zikula module from a ModuleStudio application model
 inputs:
   model_name:
