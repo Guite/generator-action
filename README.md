@@ -33,4 +33,4 @@ with:
   verbose: true
 ```
 
-A dummy project using this GitHub Action can be found [here](https://github.com/Guite/test-actions).
+A sample project using this GitHub Action can be found [here](https://github.com/Guite/test-actions).
