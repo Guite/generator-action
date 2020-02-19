@@ -10,7 +10,7 @@ inputs:
     required: true
     default: 'Acme/NewsModule'
   base_dir:
-    description: Path to the directory containing the modules folder (including trailing slash)
+    description: Path to the directory containing the extensions folder (including trailing slash)
     required: false
   verbose:
     description: Enable verbose output

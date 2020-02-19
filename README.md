@@ -16,7 +16,7 @@ The standalone generator is always providing the latest Git revision of [the gen
 
 ### `base_dir`
 
-**Optional** Path to the directory containing the `modules/` folder (including trailing slash). Default `""`.
+**Optional** Path to the directory containing the `extensions/` folder (including trailing slash). Default `""`.
 
 ### `verbose`
 
