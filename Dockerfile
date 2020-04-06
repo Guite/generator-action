@@ -3,8 +3,8 @@ FROM alpine:3.10
 
 LABEL "com.github.actions.name"="Guite-Generator-Action"
 LABEL "com.github.actions.description"="Regenerate Zikula modules from ModuleStudio models"
-LABEL "com.github.actions.icon"="orange"
-LABEL "com.github.actions.color"="blue"
+LABEL "com.github.actions.icon"="check"
+LABEL "com.github.actions.color"="orange"
 
 LABEL "repository"="https://github.com/Guite/generator-action"
 LABEL "homepage"="https://github.com/actions"
