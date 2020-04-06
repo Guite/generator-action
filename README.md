@@ -31,7 +31,7 @@ Generated files.
 ## Example usage
 
 ```
-uses: guite/generator-action@master
+uses: docker://guite/generator-action:latest
 with:
   model_name: 'MultiHook.mostapp'
   module_name: 'Zikula/MultiHookModule'
