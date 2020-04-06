@@ -19,7 +19,7 @@ outputs:
     description: Generated files
 runs:
   using: docker
-  image: Dockerfile
+  image: docker://guite/generator-action
 branding:
   icon: check
   color: orange
