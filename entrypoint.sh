@@ -4,7 +4,7 @@ WORKSPACE_ROOT="${GITHUB_WORKSPACE}/"
 MODEL_NAME=$1
 MODULE_NAME=$2
 BASE_DIR=$3
-VERBOSE=${4:false}
+VERBOSE=${4:-false}
 
 # echo "Model: ${MODEL_NAME}"
 # echo "Module: ${MODULE_NAME}"
