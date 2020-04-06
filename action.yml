@@ -4,17 +4,16 @@ inputs:
   model_name:
     description: Model name
     required: true
-    default: 'AcmeNews.mostapp'
   module_name:
     description: Module name
     required: true
-    default: 'Acme/NewsModule'
   base_dir:
     description: Path to the directory containing the extensions folder (including trailing slash)
     required: false
   verbose:
     description: Enable verbose output
     required: false
+    default: false
 outputs:
   result:
     description: Generated files

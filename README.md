@@ -6,8 +6,8 @@ The standalone generator is always providing the latest Git revision of [the gen
 
 ## Inputs
 
-1. Full name of your model file. Default `"AcmeNews.mostapp"`.
-2. Name of your module including the vendor and the `Module` suffix. Default `"Acme/NewsModule"`.
+1. Full name of your model file. Example: `AcmeNews.mostapp`.
+2. Name of your module including the vendor and the `Module` suffix. Example: `Acme/NewsModule`.
 3. Path to the directory containing the `extensions/` folder (including trailing slash). Default `""`.
 4. Whether to enable verbose output (set to `true`). Default `false`.
 
